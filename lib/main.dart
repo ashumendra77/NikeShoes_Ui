@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoes_ui/shoe_detail.dart';
 
+import 'detailScreen.dart';
+
 void main() {
   runApp(Myapp());
 }
@@ -58,11 +60,18 @@ class _FirstScreenState extends State<FirstScreen> {
 
   Widget getShoes(Shoes shoe) {
     return GestureDetector(
-      onTap: () => debugPrint("p"),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Homepage(
+                      shoesdetail: shoe,
+                    )));
+      },
       child: Column(
         children: <Widget>[
           Container(
-            height: 200,
+            height: 220,
             margin: EdgeInsets.only(left: 10, right: 10),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -71,13 +80,13 @@ class _FirstScreenState extends State<FirstScreen> {
                 image: DecorationImage(
                     image: AssetImage(shoe.imageurl), fit: BoxFit.cover)),
             child: Padding(
-              padding:  EdgeInsets.only(left:8.0,top: 8),
+              padding: EdgeInsets.only(left: 8.0, top: 8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     shoe.name,
-                    style: TextStyle(fontSize:18,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   Text("On Stock"),
                   Row(
@@ -86,7 +95,6 @@ class _FirstScreenState extends State<FirstScreen> {
                       Text(shoe.like),
                     ],
                   ),
-                  
                   SizedBox(height: 87),
                   Container(
                     height: 40,
@@ -110,7 +118,7 @@ class _FirstScreenState extends State<FirstScreen> {
               ),
             ),
           ),
-          SizedBox(height:15)
+          SizedBox(height: 15)
         ],
       ),
     );
@@ -163,7 +171,6 @@ class _FirstScreenState extends State<FirstScreen> {
                     ]),
                 child: TextField(
                   decoration: InputDecoration(
-
                       hintText: "Search something",
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25)),
@@ -203,73 +210,12 @@ class _FirstScreenState extends State<FirstScreen> {
               //   child: Column(
               //     crossAxisAlignment: CrossAxisAlignment.start,
               //     children: <Widget>[
-              //       Text(
-              //         "Nike joynite Run flyknit",
-              //         style: TextStyle(fontWeight: FontWeight.bold),
               //       ),
+
               //       Text("On Stock"),
               //       Row(
               //         children: <Widget>[
-              //           Icon(Icons.favorite, color: Color(0xfff5898a)),
-              //           Text("10K"),
-              //         ],
-              //       ),
-              //       Text(
-              //         "\$${150}",
-              //       ),
-              //       SizedBox(height: 92),
-              //       Container(
-              //         height: 30,
-              //         alignment: Alignment.bottomRight,
-              //         child: Container(
-              //           // height: 25,
-              //           width: 80,
-              //           decoration: BoxDecoration(
-              //               color: Color(0xff6b88a8),
-              //               borderRadius: BorderRadius.only(
-              //                   bottomRight: Radius.circular(15),
-              //                   topLeft: Radius.circular(15))),
-              //           child: Center(
-              //             child: Text(
-              //               "\$${150}",style: TextStyle(color:Colors.white),
-              //             ),
-              //           ),
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-              // Text("hii"),
-              // Container(
-              //   height: 200,
-              //   margin: EdgeInsets.only(left: 10, right: 10),
-              //   width: double.infinity,
-              //   decoration: BoxDecoration(
-              //       borderRadius: BorderRadius.circular(20),
-              //       color: Color(0xffaaaaaa),
-              //       image: DecorationImage(
-              //           image: AssetImage("images/photo0.jpeg"),
-              //           fit: BoxFit.cover)),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: <Widget>[
-              //       Text(
-              //         "Nike joynite Run flyknit",
-              //         style: TextStyle(fontWeight: FontWeight.bold),
-              //       ),
-              //       Text("On Stock"),
-              //       Row(
-              //         children: <Widget>[
-              //           Icon(Icons.favorite, color: Color(0xfff5898a)),
-              //           Text("10K"),
-              //         ],
-              //       ),
-              //       Text(
-              //         "\$${150}",
-              //       )
-              //     ],
-              //   ),
-              // ),
+
               // SizedBox(height: 10),
               // Container(
               //   height: 200,
