@@ -71,7 +71,7 @@ class _FirstScreenState extends State<FirstScreen> {
       child: Column(
         children: <Widget>[
           Container(
-            height: 220,
+            height: 200,
             margin: EdgeInsets.only(left: 10, right: 10),
             width: double.infinity,
             decoration: BoxDecoration(

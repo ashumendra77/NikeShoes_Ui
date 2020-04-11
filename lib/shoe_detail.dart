@@ -24,7 +24,7 @@ List<Shoes> shoelist = [
       like: "142k",
       price: "189"),
   Shoes(
-      name: "Nike 6 Pro Heat",
+      name: "Kyrie 6 PRE HEAT",
       imageurl: "images/photo12.jpeg",
       like: "162k",
       price: "159"),

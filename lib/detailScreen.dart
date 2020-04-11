@@ -149,7 +149,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                   Container(
                     margin: EdgeInsets.only(left: 10, top: 15, right: 10),
-                    height: 60,
+                    height: 50,
                     width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.black,

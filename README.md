@@ -1,6 +1,5 @@
 # NikeShoes_ui
 
-A new Flutter project.
 Please consider donating if you think NikeShoes_Ui is helpful to you or that my work is valuable.
 
 
