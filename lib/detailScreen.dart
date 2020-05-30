@@ -63,7 +63,7 @@ class _HomepageState extends State<Homepage> {
           )),
           actions: <Widget>[
             Padding(
-              padding:  EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: Icon(
                 Icons.shopping_cart,
                 color: Colors.black,
@@ -151,7 +151,7 @@ class _HomepageState extends State<Homepage> {
                     margin: EdgeInsets.only(left: 10, top: 15, right: 10),
                     height: 50,
                     width: double.infinity,
-                      decoration: BoxDecoration(
+                    decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(40)),
                     child: Center(

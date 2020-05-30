@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shoes_ui/shoe_detail.dart';
-
 import 'detailScreen.dart';
 
 void main() {
@@ -23,6 +23,18 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  @override
+  void initState() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    SystemChrome.setEnabledSystemUIOverlays([]);
+    super.dispose();
+  }
+
   int selectedIndex = 0;
 
   List<String> item = [
@@ -134,13 +146,12 @@ class _FirstScreenState extends State<FirstScreen> {
           Icons.blur_on,
           color: Colors.black,
           size: 30,
-
         ),
         title: Center(
-              child: Image.asset(
-            "images/appbar.png",
-            height: 60,
-          )),
+            child: Image.asset(
+          "images/appbar.png",
+          height: 60,
+        )),
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.only(right: 10.0),
@@ -174,6 +185,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: "Search something",
+                      focusedBorder: InputBorder.none,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25)),
                       prefixIcon: Icon(Icons.search, color: Colors.grey)),
@@ -191,7 +203,6 @@ class _FirstScreenState extends State<FirstScreen> {
                   )),
               Container(
                 child: Column(
-                    // scrollDirection: Axis.vertical,
                     children: shoelist.asMap().entries.map((MapEntry map) {
                   return getShoes(map.value);
                 }).toList()),
@@ -204,11 +215,3 @@ class _FirstScreenState extends State<FirstScreen> {
     );
   }
 }
-
-/*images (1).jpeg
-   - images/images (2).jpeg
-   - images/images (3).jpeg
-   - images/images (4).jpeg
-   - images/images (5).jpeg
-   - images/download (2).jpeg
-   - images/images.jpeg*/
